@@ -1,6 +1,6 @@
 export class ListItem{
     desc:string;
-    completed:string;
+    completed:boolean;
 
     constructor(desc:string){
         this.desc = desc;

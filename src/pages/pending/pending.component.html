@@ -1,10 +1,16 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>Pending</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h2>Welcome to PendingPage!</h2>
+<ion-content>
+    <img src="../assets/imgs/pendientes.jpg" alt="pending">
+
+    <app-lists [listFinished]="false"></app-lists>
+
+    <ion-fab bottom right (click)="addAList()">
+        <button ion-fab><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 
 </ion-content>

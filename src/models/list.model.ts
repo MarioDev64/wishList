@@ -5,11 +5,14 @@ export class List{
     title : String;
     createDate : Date;
     finishedDate : Date;
-    wasFinished : Boolean;
+    finished : Boolean;
     items : ListItem[];
 
     constructor( title : String ){
         this.title = title;
-        this.wasFinished = false;
+        this.finished = false;
+        this.createDate = new Date();
+        this.items = [];
+        this.id = new Date().getTime();
     }
 }

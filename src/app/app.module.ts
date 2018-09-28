@@ -12,16 +12,27 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PendingComponent } from "../pages/pending/pending.component";
 import { FinishedComponent } from "../pages/finished/finished.component";
+import { AddListComponent } from "../pages/addList/addList.component";
+import { ListsComponent } from './components/lists.components';
 
 //services
-import { wishService } from "../services/wish.service";
+import { wishesService } from "../services/wishes.service";
+
+
+//pipes
+import { CompletedFilterPipe } from "../pipes/completed-filter/completed-filter";
+import { ItemsCompletedPipe } from "../pipes/items-completed/items-completed";
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendingComponent,
-    FinishedComponent
+    FinishedComponent,
+    AddListComponent,
+    ListsComponent,
+    CompletedFilterPipe,
+    ItemsCompletedPipe
   ],
   imports: [
     BrowserModule,
@@ -32,12 +43,14 @@ import { wishService } from "../services/wish.service";
     MyApp,
     TabsPage,
     PendingComponent,
-    FinishedComponent
+    FinishedComponent,
+    AddListComponent,
+    ListsComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    wishService,
+    wishesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
